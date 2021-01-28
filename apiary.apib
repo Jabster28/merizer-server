@@ -1,0 +1,95 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# Merizer Server
+
+The REST API to the backend of Merizer.
+
+## Merkle Tree [/tree{?username}]
+
+### Get Latest Leaf [GET]
+
++ Parameters
+    + username (optional, string) ... Get Latest Leaf that was made from given username.
+
++ Response 200 (application/json)
+
+    
+        {
+          "_id": "6011febe3de81ccb83325d90",
+          "body": {
+            "device": {...},
+            "key": {
+              "host": "merizer",
+              "kid": "2e45c85b11b05eaa503eea2bc3e2bd02fcc9813b195388ef00210823e8f01f94",
+              "username": "yumeko"
+            },
+            "uid": "6011febe3de81ccb83325d8f",
+            "type": "eldest",
+            "version": 1
+          },
+          "client": {
+            "name": "merizer cli",
+            "version": "0.0.0"
+          },
+          "seqno": 0,
+          "tree": {
+            "seqno": 1,
+            "lastHash": "40077bd269ddac4a",
+            "lastCTime": 1611660779842
+          },
+          "ctime": 1611792062178,
+          "lastHash": "354a330406e58157",
+          "tag": "signature",
+          "sig": {...}
+        }
+    
+### Add a New Leaf [POST]
+
+You may push a leaf to the tee using this action. It takes a JSON
+object with all relevant info.
+
++ Request (application/json)
+
+        {
+          "body": {
+            "device": {
+              "kid": "ca07012c50ad3bcad2fd2c3161ecd5be6ce38e85045f36c52c8eadb84fda1a5d",
+              "name": "Yumeko's iPhone",
+              "status": 1,
+              "type": "cli",
+              "id": "98987229a139b4c5a559c8548ca68c20"
+            },
+            "key": {
+              "host": "merizer",
+              "kid": "ca07012c50ad3bcad2fd2c3161ecd5be6ce38e85045f36c52c8eadb84fda1a5d",
+              "username": "yumeko"
+            },
+            "type": "eldest",
+            "version": 1
+          },
+          "client": {
+            "name": "merizer cli",
+            "version": "0.0.0"
+          },
+          "seqno": 2,
+          "tree": {
+            "seqno": 2,
+            "lastHash": "7fbf4cf2dfe86447",
+            "lastCTime": 1611792062178
+          },
+          "ctime": 1611874574864,
+          "lastHash": "7fbf4cf2dfe86447",
+          "tag": "signature",
+          "sig": []
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {"itemNo":2}
