@@ -1,18 +1,21 @@
 FORMAT: 1A
-HOST: https://polls.apiblueprint.org/
+HOST: http://jabster28.ddns.net:3000/
 
 # Merizer Server
 
 The REST API to the backend of Merizer.
 
-## Merkle Tree [/tree{?username}]
+## Merkle Tree [/tree{?username}{?count}]
+
+All endpoints to do with the forsaken Merkle Tree
 
 ### Get Latest Leaf [GET]
 
 + Parameters
     + username (optional, string) ... Get Latest Leaf that was made from given username.
+    + count (optional, number) ... Returns array of length `count` () instead of a single leaf.
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
     
         {
@@ -84,7 +87,7 @@ object with all relevant info.
           "sig": []
         }
 
-+ Response 201 (application/json)
++ Response 201 (application/json; charset=utf-8)
 
     + Headers
 
@@ -92,4 +95,28 @@ object with all relevant info.
 
     + Body
 
-            {"itemNo":2}
+            {
+                "itemNo": 2
+            }
+            
+            
+            
+## User [/user{?username}]
+
+Returns the user object if found, otherwise a 404.
++ Parameters
+    + username (required, string) ... Get Latest Leaf that was made from given username.
+
+### Examples [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "_id": "6011febe3de81ccb83325d8f",
+          "ctime": 1611792062099,
+          "username": "yumeko"
+        }
+        
++ Response 404 (text/plain)
+
+        Not Found
