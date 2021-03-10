@@ -32,7 +32,7 @@
     "mongodb": "^3.6.3",
     "msgpack5": "^5.0.0",
     "openpgp": "^4.10.10",
-    "socket.io": "^3.1.0",
+    "socket.io": "^4.0.0",
     "xxhash": "^0.3.0"
   }
 }
