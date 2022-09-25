@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@types/express": "^4.17.11",
+    "@types/express": "4.17.14",
     "@types/mongodb": "^3.6.3",
     "@types/msgpack5": "^3.4.1",
     "@types/node": "^14.11.2",
