@@ -158,10 +158,10 @@
     "@types/bson" "*"
     "@types/node" "*"
 
-"@types/msgpack5@^3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@types/msgpack5/-/msgpack5-3.4.1.tgz#79a0bdf1a723abd8496b0dba380ee02a5e41264a"
-  integrity sha512-E3wILUjTXONukpiI6tmqpLwf7eV3MVTdxpjz56FqNn7koMF/6sSPUh5TxMlwgoOhyeejxwVoNZUiDcdqChKkAw==
+"@types/msgpack5@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@types/msgpack5/-/msgpack5-3.4.2.tgz#a148384c09dd849f3319bc0894744d3c61da4ece"
+  integrity sha512-AWhETTHYPFLIdBI1MzDM0tWMXOYqsWHgXGThOG3+q1oD2FehuAceaElFXhSQ1r6/WBE+8h3Yf2UHH9oKUmOUlA==
   dependencies:
     "@types/bl" "*"
 
