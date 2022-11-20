@@ -30,7 +30,7 @@
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "mongodb": "^3.6.3",
-    "msgpack5": "^5.0.0",
+    "msgpack5": "^6.0.0",
     "openpgp": "^4.10.10",
     "socket.io": "^3.1.0",
     "xxhash": "^0.3.0"
